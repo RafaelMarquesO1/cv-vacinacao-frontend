@@ -1,0 +1,233 @@
+/* Importando a Fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Estilo Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff; /* Fundo branco */
+  color: #2c342c;
+  overflow-x: hidden;
+  transition: background 0.5s ease; /* Suave ao alterar o fundo */
+}
+
+/* Cabeçalhos */
+h1, h2, h3 {
+  color: #2c342c;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 3rem; /* Aumentando o tamanho da fonte */
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 700; /* Aumentando o peso da fonte */
+  animation: fadeInDown 0.7s ease-in-out; /* Animação ao aparecer */
+}
+
+/* Botões Animados */
+button, .btn {
+  background: linear-gradient(135deg, #44bfba, #90b182);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para animação */
+  animation: popIn 0.3s ease forwards; /* Animação ao aparecer */
+}
+
+button:hover {
+  transform: scale(1.1) translateY(-3px); /* Eleva o botão ao passar o mouse */
+  background: linear-gradient(135deg, #6d8c62, #44bfba);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabela Estilizada */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out; /* Animação de fade-in ao carregar */
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #2c342c;
+  transition: background-color 0.3s; /* Suavizar transição da cor de fundo */
+}
+
+th {
+  background: linear-gradient(135deg, #44bfba, #90b182);
+  color: white;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #c9dac2;
+}
+
+tr:hover {
+  background-color: #c9dac2; /* Cor 1 da paleta no hover */
+  color: #2c342c; /* Mantendo a cor do texto */
+}
+
+/* Formulário Refinado */
+input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 2px solid #6d8c62;
+  border-radius: 12px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #44bfba;
+  box-shadow: 0 0 10px rgba(68, 191, 186, 0.5);
+}
+
+/* Modal Personalizado */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: modalFadeIn 0.3s ease forwards; /* Animação de entrada do modal */
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Escala do modal ao aparecer */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Tamanho normal do modal */
+  }
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #c9dac2, #6d8c62);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease forwards; /* Animação para o conteúdo do modal */
+}
+
+/* Links */
+a {
+  color: #2c342c;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #44bfba;
+  text-decoration: underline;
+}
+
+/* Sidebar Estilizada */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(135deg, #2c342c, #90b182);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideIn 0.5s ease-in-out; /* Animação da sidebar */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #44bfba;
+  transform: scale(1.05);
+}
+
+/* Animações */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move para cima ao aparecer */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Conteúdo Principal */
+.main-content {
+  margin-left: 300px;
+  padding: 40px;
+  min-height: 100vh;
+  background: #ffffff; /* Fundo branco */
+  transition: margin-left 0.3s; /* Suavizar transição ao alterar a margem */
+}

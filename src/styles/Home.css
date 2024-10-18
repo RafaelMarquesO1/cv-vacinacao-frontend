@@ -1,0 +1,15 @@
+.container-base {
+    display: flex;            /* Usando flexbox para centralizar */
+    flex-direction: column;  /* Colocando os itens em coluna */
+    align-items: center;     /* Centraliza horizontalmente */
+    justify-content: center;  /* Centraliza verticalmente */
+    height: 100vh;          /* Altura total da tela */
+}
+
+.container-base h1 {
+    color: #6d8c62;         /* Aplica a cor COR1 ao título */
+}
+
+.container-base h2 {
+    margin-top: 10px;       /* Adiciona um espaço acima do subtítulo */
+}
